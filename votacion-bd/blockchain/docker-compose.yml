@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  blockchain:
+    build: .
+    container_name: blockchain_service
+    restart: "no"
+    environment:
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
+      PYTHONIOENCODING: utf-8
+      DB_VOTACION_HOST: host.docker.internal
+      DB_VOTACION_PORT: 5432
+      DB_VOTACION_NAME: votacion_db
+      DB_VOTACION_USER: admin_votacion
+      DB_VOTACION_PASS: votacion1234
+      DB_REGISTRADURIA_HOST: host.docker.internal
+      DB_REGISTRADURIA_PORT: 5433
+      DB_REGISTRADURIA_NAME: registraduria_db
+      DB_REGISTRADURIA_USER: admin_registraduria
+      # CORREGIDO: unificado con el docker-compose de registraduria (reg1234)
+      DB_REGISTRADURIA_PASS: reg1234
+    ports:
+      - "3000:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

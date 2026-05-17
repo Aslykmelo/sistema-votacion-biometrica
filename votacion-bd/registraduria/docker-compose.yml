@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  db_registraduria:
+    image: postgres:16
+    container_name: registraduria_sim
+    restart: always
+    environment:
+      POSTGRES_DB: registraduria_db
+      POSTGRES_USER: admin_registraduria
+      POSTGRES_PASSWORD: reg1234
+      POSTGRES_INITDB_ARGS: "--locale=en_US.UTF-8"
+    ports:
+      - "5433:5432"
+    volumes:
+      - datos_registraduria:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d
+
+  adminer:
+    image: adminer
+    container_name: adminer_registraduria
+    restart: always
+    ports:
+      - "8081:8080"
+
+volumes:
+  datos_registraduria:  

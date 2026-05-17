@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  db_votacion:
+    image: postgres:16
+    container_name: votacion_interna
+    restart: always
+    environment:
+      POSTGRES_DB: votacion_db
+      POSTGRES_USER: admin_votacion
+      POSTGRES_PASSWORD: votacion1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - datos_votacion:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d
+
+  adminer:
+    image: adminer
+    container_name: adminer_votacion
+    restart: always
+    ports:
+      - "8080:8080"
+
+volumes:
+  datos_votacion:
