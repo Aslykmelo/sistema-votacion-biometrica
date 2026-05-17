@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cabina de Votación</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<main class="app">
+
+<header class="topbar">
+<div>
+<h1>Sistema de Votación Electrónica</h1>
+<p>Cabina de votación ciudadana</p>
+</div>
+
+<div class="status">
+<span class="dot"></span>
+<span>Sistema activo</span>
+</div>
+</header>
+
+<section class="layout">
+
+<article class="card panel">
+
+<h2>Datos del votante</h2>
+
+<div class="votante">
+<p><strong>Nombre:</strong> <span id="nombreVotante"></span></p>
+<p><strong>Cédula:</strong> <span id="cedulaVotante"></span></p>
+</div>
+
+<div class="timer-box">
+<small>Tiempo restante</small>
+<h3 id="contador">05:00</h3>
+
+<div class="timer-bar">
+<div class="timer-fill" id="timerFill"></div>
+</div>
+</div>
+
+<h2>Seleccione candidato</h2>
+
+<div class="candidatos">
+
+<button class="candidato" data-candidato="Iván Cepeda">
+<img src="https://picsum.photos/100?1">
+<h4>Iván Cepeda</h4>
+<p>Pacto Histórico</p>
+</button>
+
+<button class="candidato" data-candidato="Paloma Valencia">
+<img src="https://picsum.photos/100?2">
+<h4>Paloma Valencia</h4>
+<p>Centro Democrático</p>
+</button>
+
+<button class="candidato" data-candidato="Claudia López">
+<img src="https://picsum.photos/100?3">
+<h4>Claudia López</h4>
+<p>Consulta de las Soluciones</p>
+</button>
+
+<button class="candidato" data-candidato="Abelardo de la Espriella">
+<img src="https://picsum.photos/100?4">
+<h4>Abelardo de la Espriella</h4>
+<p>Salvación Nacional</p>
+</button>
+
+<button class="candidato" data-candidato="Sergio Fajardo">
+<img src="https://picsum.photos/100?5">
+<h4>Sergio Fajardo</h4>
+<p>Dignidad y Compromiso</p>
+</button>
+
+<button class="candidato" data-candidato="Roy Barreras">
+<img src="https://picsum.photos/100?6">
+<h4>Roy Barreras</h4>
+<p>Frente por la Vida</p>
+</button>
+
+<button class="candidato blanco" data-candidato="Blanco">
+<img src="https://picsum.photos/100?7">
+<h4>Voto en Blanco</h4>
+<p>Opción válida</p>
+</button>
+
+</div>
+
+<button class="btn ayuda" onclick="pedirAyuda()">Solicitar ayuda</button>
+
+<div id="mensajeAyuda"></div>
+
+</article>
+
+</section>
+</main>
+
+<div class="modal hidden" id="modal">
+<div class="modal-content">
+<h2 id="textoModal"></h2>
+
+<div class="modal-actions">
+<button class="btn secondary" onclick="cerrarModal()">Cancelar</button>
+<button class="btn primary" id="confirmarVoto">Confirmar</button>
+</div>
+</div>
+</div>
+
+<script src="votacion.js"></script>
+
+</body>
+</html>

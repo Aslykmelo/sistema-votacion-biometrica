@@ -1,0 +1,177 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#06152b,#123863,#1b4f8c);
+    min-height:100vh;
+    color:white;
+}
+
+.jurado-wrap{
+    width:92%;
+    max-width:1350px;
+    margin:auto;
+    padding:35px 0;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.hero h1{
+    font-size:52px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.hero p{
+    font-size:20px;
+    color:#c7d8f0;
+}
+
+.badge-estado{
+    background:rgba(255,255,255,.12);
+    padding:18px 28px;
+    border-radius:20px;
+    font-size:22px;
+}
+
+.led{
+    width:14px;
+    height:14px;
+    background:#2dd4bf;
+    display:inline-block;
+    border-radius:50%;
+    margin-right:10px;
+}
+
+.jurado-grid{
+    display:grid;
+    grid-template-columns:1.3fr .9fr;
+    gap:28px;
+}
+
+.card-jurado{
+    background:rgba(8,20,42,.93);
+    border-radius:24px;
+    padding:38px;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+}
+
+.card-jurado h2{
+    font-size:36px;
+    margin-bottom:30px;
+}
+
+.grande{
+    min-height:620px;
+}
+
+.campo-box{
+    margin-bottom:22px;
+}
+
+.campo-box label{
+    display:block;
+    font-size:18px;
+    margin-bottom:10px;
+    color:#dbeafe;
+}
+
+.campo-box input{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:14px;
+    font-size:18px;
+    outline:none;
+}
+
+.campo-box input:focus{
+    box-shadow:0 0 0 3px rgba(59,130,246,.4);
+}
+
+.fila-check{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:18px;
+    font-size:18px;
+}
+
+.fila-check input{
+    width:22px;
+    height:22px;
+}
+
+.btn-azul,.btn-verde,.btn-gris{
+    width:100%;
+    border:none;
+    padding:18px;
+    border-radius:15px;
+    font-size:20px;
+    margin-top:20px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.btn-azul{
+    background:#2563eb;
+    color:white;
+}
+
+.btn-verde{
+    background:#10b981;
+    color:white;
+}
+
+.btn-gris{
+    background:#475569;
+    color:white;
+}
+
+.btn-azul:hover,.btn-verde:hover,.btn-gris:hover{
+    transform:translateY(-2px);
+}
+
+.mensaje-pro{
+    margin-top:25px;
+    min-height:60px;
+    background:rgba(255,255,255,.07);
+    border-radius:15px;
+    padding:18px;
+    font-size:17px;
+    display:flex;
+    align-items:center;
+}
+
+.estado-info{
+    background:rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:25px;
+    font-size:21px;
+    line-height:2;
+}
+
+@media(max-width:1000px){
+    .jurado-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+}

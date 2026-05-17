@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Jurado</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="jurado-wrap">
+
+  <header class="hero">
+    <div>
+      <h1>Sistema de Votación Electrónica</h1>
+      <p>Panel de jurado • Control de acceso y autorización</p>
+    </div>
+
+    <div class="badge-estado">
+      <span class="led"></span>
+      <span id="estadoJurado">Verificando...</span>
+    </div>
+  </header>
+
+  <section class="jurado-grid">
+
+    <div class="card-jurado grande">
+      <h2>Validación del ciudadano</h2>
+
+      <div class="campo-box">
+        <label>Número de cédula</label>
+        <input id="cedula" type="text" placeholder="Solo números">
+      </div>
+
+      <div class="campo-box">
+        <label>Nombre completo</label>
+        <input id="nombre" type="text" placeholder="Solo letras">
+      </div>
+
+      <button class="btn-azul" onclick="escanearBiometria()">
+        Escanear biometría
+      </button>
+
+      <label class="fila-check">
+        <input id="biometria" type="checkbox" disabled>
+        <span>Biometría validada</span>
+      </label>
+
+      <button class="btn-verde" id="btnEnviar">
+        Autorizar ingreso a cabina
+      </button>
+
+      <div id="mensajeValidacion" class="mensaje-pro"></div>
+    </div>
+
+    <div class="card-jurado">
+      <h2>Estado cabina</h2>
+
+      <div class="estado-info">
+        <p>Cabina disponible</p>
+        <p>Tiempo máximo: 5 min</p>
+        <p>Conexión segura</p>
+        <p>Registro activo</p>
+      </div>
+
+      <button class="btn-azul" id="btnAbrirCabina" disabled>
+        Abrir cabina
+      </button>
+
+      <button class="btn-gris" onclick="reiniciarMesa()">
+        Reiniciar mesa
+      </button>
+    </div>
+
+  </section>
+
+</div>
+
+<script src="jurado.js"></script>
+</body>
+</html>
