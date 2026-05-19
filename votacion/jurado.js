@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000";
+const API_URL = "https://tu-backend.up.railway.app";
 
 const cedulaInput  = document.getElementById("cedula");
 const nombreInput  = document.getElementById("nombre");

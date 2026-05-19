@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000";
+const API_URL = "https://tu-backend.up.railway.app";
 
 const CANDIDATOS_ID = {
   "Iván Cepeda":              1,
